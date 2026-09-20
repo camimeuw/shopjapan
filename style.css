@@ -59,12 +59,8 @@ body {
 }
 
 /* ==========================================================================
-   Menú lateral (checkbox-hack, sin JS)
+   Menú lateral
    ========================================================================== */
-
-.menu-toggle-input {
-  display: none;
-}
 
 .menu-overlay {
   position: absolute;
@@ -75,6 +71,11 @@ body {
   transition: opacity 0.25s ease;
   cursor: pointer;
   z-index: 30;
+}
+
+.menu-overlay.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .side-menu {
@@ -99,12 +100,7 @@ body {
   z-index: 31;
 }
 
-.menu-toggle-input:checked ~ .menu-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-.menu-toggle-input:checked ~ .side-menu {
+.side-menu.open {
   transform: translateX(0);
 }
 

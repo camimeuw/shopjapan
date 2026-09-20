@@ -11,18 +11,16 @@
 <body>
   <div class="phone-frame">
 
-    <!-- Toggle del menú lateral (sin JS, técnica checkbox-hack) -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <!-- Menú lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
-    <label for="menu-toggle" class="menu-overlay"></label>
-
-    <nav class="side-menu">
-      <label for="menu-toggle" class="menu-close" aria-label="Cerrar menú">
+    <nav class="side-menu" id="side-menu">
+      <button class="menu-close" id="menu-close" aria-label="Cerrar menú" type="button">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#8a4f68" stroke-width="2.2" stroke-linecap="round">
           <line x1="5" y1="5" x2="19" y2="19"/>
           <line x1="19" y1="5" x2="5" y2="19"/>
         </svg>
-      </label>
+      </button>
       <h2 class="menu-title">Mi Tienda</h2>
       <ul class="menu-list">
         <li><a href="#">Inicio</a></li>
@@ -36,13 +34,13 @@
     <!-- Barra Superior: Navegación y Contadores -->
     <div class="top-bar">
       <nav class="top-nav">
-        <label for="menu-toggle" class="btn-back" aria-label="Abrir menú">
+        <button class="btn-back" id="menu-open" aria-label="Abrir menú" type="button">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round">
             <line x1="3" y1="6" x2="21" y2="6"/>
             <line x1="3" y1="12" x2="21" y2="12"/>
             <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
-        </label>
+        </button>
 
         <div class="counters">
           <div class="counter-pill">
@@ -158,5 +156,29 @@
 
     </main>
   </div>
+
+  <script>
+    const openBtn = document.getElementById('menu-open');
+    const closeBtn = document.getElementById('menu-close');
+    const overlay = document.getElementById('menu-overlay');
+    const sideMenu = document.getElementById('side-menu');
+
+    function openMenu() {
+      sideMenu.classList.add('open');
+      overlay.classList.add('visible');
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove('open');
+      overlay.classList.remove('visible');
+    }
+
+    openBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.menu-list a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 </body>
 </html>
