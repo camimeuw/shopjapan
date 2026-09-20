@@ -59,6 +59,100 @@ body {
 }
 
 /* ==========================================================================
+   Menú lateral (checkbox-hack, sin JS)
+   ========================================================================== */
+
+.menu-toggle-input {
+  display: none;
+}
+
+.menu-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 76%;
+  max-width: 280px;
+  background-color: #fdeef3;
+  background-image: url('bg-floral.jpg');
+  background-repeat: repeat;
+  background-size: 400px auto;
+  border-right: 1px solid #000;
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.2);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 31;
+}
+
+.menu-toggle-input:checked ~ .menu-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-toggle-input:checked ~ .side-menu {
+  transform: translateX(0);
+}
+
+.menu-close {
+  align-self: flex-end;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-title {
+  margin: 0;
+  text-align: center;
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--text-dark);
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px 14px;
+  background: var(--white);
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
    Barra Superior: Navegación y Contadores
    ========================================================================== */
 
@@ -99,12 +193,6 @@ body {
 .btn-back {
   background: #000;
   border: 2px solid #ddd;
-}
-
-.btn-back .arrow-icon {
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1;
 }
 
 .btn-cart {
