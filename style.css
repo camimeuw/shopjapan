@@ -1,0 +1,315 @@
+/* ==========================================================================
+   Mi Tienda — estética "gacha" japonesa, pastel, mobile-first
+   ========================================================================== */
+
+:root {
+  --pink-light: #ffe1ec;
+  --pink: #ffb6c9;
+  --pink-deep: #ff8fab;
+  --pink-dark: #f76c96;
+  --blue-light: #dff3f7;
+  --blue: #bfe6ef;
+  --lavender: #e6d9f5;
+  --mint: #d3f2e6;
+  --peach: #ffe4cf;
+  --cream: #fffaf6;
+  --white: #ffffff;
+  --text-dark: #7a5468;
+  --text-soft: #a3798c;
+  --red-tag: #ff5c72;
+  --shadow-soft: 0 6px 14px rgba(214, 138, 165, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--pink-light);
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      var(--pink-light) 0px,
+      var(--pink-light) 26px,
+      #fff0f5 26px,
+      #fff0f5 52px
+    );
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Contenedor centrado tipo pantalla de celular */
+.phone-frame {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--cream);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 431px) {
+  body {
+    padding: 24px 12px;
+  }
+  .phone-frame {
+    min-height: 90vh;
+    border-radius: 28px;
+    box-shadow: 0 20px 45px rgba(214, 138, 165, 0.35);
+    border: 6px solid var(--white);
+  }
+}
+
+/* ==========================================================================
+   Barra Superior: Ticker
+   ========================================================================== */
+
+.ticker-bar {
+  width: 100%;
+  background: linear-gradient(90deg, var(--pink-dark), var(--pink-deep));
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  border-bottom: 3px solid var(--white);
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: scroll-ticker 12s linear infinite;
+  width: max-content;
+  padding-left: 100%;
+}
+
+.ticker-track span {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes scroll-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ==========================================================================
+   Encabezado
+   ========================================================================== */
+
+.header {
+  position: relative;
+  text-align: center;
+  padding: 22px 16px 26px;
+  background: linear-gradient(180deg, #fff5f8, var(--cream));
+  border-bottom: 2px dashed var(--pink);
+}
+
+.shop-title {
+  margin: 0;
+  display: inline-block;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 1px;
+  padding: 8px 28px;
+  background: linear-gradient(180deg, var(--pink-deep), var(--pink-dark));
+  border: 3px solid var(--white);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+  text-shadow: 0 2px 3px rgba(180, 60, 100, 0.4);
+}
+
+.sparkle {
+  color: #fff8c4;
+  font-size: 1.1rem;
+}
+
+.banner-flag {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 34px;
+  opacity: 0.9;
+}
+
+.banner-flag::before,
+.banner-flag::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 20px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.banner-flag-left {
+  left: 12px;
+}
+.banner-flag-left::before { left: 4px; background: var(--pink); }
+.banner-flag-left::after { left: 24px; background: var(--blue); }
+
+.banner-flag-right {
+  right: 12px;
+}
+.banner-flag-right::before { right: 4px; background: var(--lavender); }
+.banner-flag-right::after { right: 24px; background: var(--peach); }
+
+/* ==========================================================================
+   Contenido
+   ========================================================================== */
+
+.content {
+  flex: 1;
+  padding: 18px 14px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---- Banners principales (2 columnas) ---- */
+
+.main-banners {
+  display: flex;
+  gap: 12px;
+}
+
+.banner-card {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  border: 3px solid var(--white);
+  outline: 1px solid var(--pink);
+}
+
+.banner-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.banner-caption {
+  text-align: center;
+  padding: 6px 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, #fff, #ffeef3);
+}
+
+.tag {
+  position: absolute;
+  top: 14px;
+  left: -34px;
+  transform: rotate(-45deg);
+  width: 130px;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tag-sale {
+  background: var(--red-tag);
+}
+
+.tag-new {
+  background: #6fc7d6;
+}
+
+/* ---- Banner medio ---- */
+
+.mid-banner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  background: linear-gradient(90deg, var(--pink-light), var(--white), var(--pink-light));
+  border: 2px dashed var(--pink-deep);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.mid-banner-icon {
+  font-size: 1.3rem;
+}
+
+/* ---- Grid de categorías ---- */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.category-btn {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 20px;
+  border: 3px solid var(--white);
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow:
+    0 5px 0 rgba(0, 0, 0, 0.08),
+    var(--shadow-soft);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.category-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.cat-icon {
+  font-size: 1.6rem;
+}
+
+.cat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.15;
+  padding: 0 4px;
+}
+
+.cat-1 { background: var(--pink); }
+.cat-2 { background: var(--blue); }
+.cat-3 { background: var(--mint); }
+.cat-4 { background: var(--peach); }
+.cat-5 { background: #ffc2cf; }
+.cat-6 { background: var(--lavender); }
