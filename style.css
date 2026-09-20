@@ -71,16 +71,9 @@ body {
     #fff9fb 6px,
     #fff9fb 12px
   );
-  padding: 10px 12px;
-}
-
-/* Divisor ondulado (curva continua tipo cinta) */
-.scallop-divider {
-  height: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14'%3E%3Cpath d='M0 7 Q10 0 20 7 T40 7' fill='none' stroke='%23e08ba0' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 40px 14px;
-  background-position: center;
+  padding: 10px 12px 24px;
+  border-bottom-left-radius: 50% 15px;
+  border-bottom-right-radius: 50% 15px;
 }
 
 .top-nav {
