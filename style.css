@@ -162,9 +162,9 @@ body {
     #fff9fb 6px,
     #fff9fb 12px
   );
-  padding: 10px 12px 30px;
-  border-bottom-left-radius: 50% 20px;
-  border-bottom-right-radius: 50% 20px;
+  padding: 10px 12px 36px;
+  border-bottom-left-radius: 50% 26px;
+  border-bottom-right-radius: 50% 26px;
   z-index: 5;
 }
 
