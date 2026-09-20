@@ -23,10 +23,6 @@
   --white: #ffffff;
   --text-dark: #8a4f68;
   --text-soft: #b98aa0;
-  --red-tag: #ff4d6d;
-  --red-tag-deep: #c9203f;
-  --cyan-tag: #4fd1e6;
-  --cyan-tag-deep: #1fa8bf;
 }
 
 * {
@@ -252,7 +248,7 @@ body {
   position: relative;
   flex: 1;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 6px;
   background: var(--white);
   border: 3px solid var(--pink);
   box-shadow:
@@ -266,7 +262,7 @@ body {
   position: absolute;
   inset: 6px;
   border: 2px dashed rgba(255, 255, 255, 0.85);
-  border-radius: 16px;
+  border-radius: 2px;
   pointer-events: none;
   z-index: 2;
 }
@@ -274,77 +270,7 @@ body {
 .banner-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-.banner-caption {
-  text-align: center;
-  padding: 8px 4px;
-  font-family: 'Fredoka One', sans-serif;
-  font-size: 0.82rem;
-  color: var(--text-dark);
-  background: linear-gradient(180deg, #fff, #ffe6ee);
-  border-top: 2px solid var(--pink-light);
-}
-
-/* ---- Cintas / etiquetas realistas ---- */
-
-.tag {
-  position: absolute;
-  top: 16px;
-  left: -42px;
-  transform: rotate(-45deg);
-  width: 160px;
-  text-align: center;
-  padding: 6px 0;
-  font-family: 'Fredoka One', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.5px;
-  color: var(--white);
-  z-index: 3;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.tag::before,
-.tag::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  border-style: solid;
-  border-width: 6px 7px 0 7px;
-}
-
-.tag::before {
-  left: 0;
-}
-
-.tag::after {
-  right: 0;
-}
-
-.tag-sale {
-  background: linear-gradient(180deg, var(--red-tag), var(--red-tag-deep));
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
-}
-
-.tag-sale::before,
-.tag-sale::after {
-  border-color: var(--red-tag-deep) transparent transparent transparent;
-  filter: brightness(0.75);
-}
-
-.tag-new {
-  background: linear-gradient(180deg, var(--cyan-tag), var(--cyan-tag-deep));
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-}
-
-.tag-new::before,
-.tag-new::after {
-  border-color: var(--cyan-tag-deep) transparent transparent transparent;
-  filter: brightness(0.75);
+  height: auto;
 }
 
 /* ---- Banner medio ---- */
