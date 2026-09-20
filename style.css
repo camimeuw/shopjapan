@@ -34,15 +34,15 @@ body {
   min-height: 100vh;
   font-family: 'Nunito', sans-serif;
   color: var(--text-dark);
-  background-color: #ffeef4;
-  /* Textura combinada: lunares sutiles + rayas diagonales suaves */
+  background-color: #fffbfc;
+  /* Textura combinada: lunares sutiles + rayas diagonales suaves, base blanca */
   background-image:
-    radial-gradient(circle, rgba(255, 182, 193, 0.35) 2px, transparent 2.6px),
+    radial-gradient(circle, rgba(255, 182, 193, 0.2) 2px, transparent 2.6px),
     radial-gradient(circle, rgba(255, 255, 255, 0.9) 2px, transparent 2.6px),
     repeating-linear-gradient(
       135deg,
-      #ffeef4 0px,
-      #ffeef4 24px,
+      #ffffff 0px,
+      #ffffff 24px,
       #fff6f9 24px,
       #fff6f9 48px
     );
@@ -58,8 +58,8 @@ body {
   width: 100%;
   max-width: 430px;
   min-height: 100vh;
-  background: var(--cream);
-  box-shadow: 0 10px 24px rgba(212, 61, 108, 0.28);
+  background: var(--white);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -73,7 +73,7 @@ body {
   .phone-frame {
     min-height: 90vh;
     border-radius: 32px;
-    box-shadow: 0 24px 55px rgba(212, 61, 108, 0.38);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.16);
     border: 7px solid var(--white);
     outline: 3px dashed var(--pink);
     outline-offset: -14px;
@@ -250,7 +250,6 @@ body {
   overflow: hidden;
   border-radius: 6px;
   background: var(--white);
-  box-shadow: 0 10px 18px rgba(212, 61, 108, 0.3);
 }
 
 .banner-card img {
