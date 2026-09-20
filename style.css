@@ -5,24 +5,15 @@
 :root {
   --pink-light: #ffe1ec;
   --pink: #ffb6c1;
-  --pink-mid: #ff9fb8;
   --pink-deep: #ff7aa2;
   --pink-dark: #ee5586;
   --pink-darker: #d43d6c;
-  --blue: #bfe9f2;
   --blue-deep: #7fd4e6;
-  --lavender: #e3d3f7;
   --lavender-deep: #c8a6ec;
-  --mint: #cdf3e3;
   --mint-deep: #8fdcbb;
-  --peach: #ffe0c2;
   --peach-deep: #ffbf8a;
-  --rose: #ffc4d1;
-  --rose-deep: #ff90a8;
-  --cream: #fff8f5;
   --white: #ffffff;
   --text-dark: #8a4f68;
-  --text-soft: #b98aa0;
 }
 
 * {
@@ -136,17 +127,9 @@ body {
 .header {
   position: relative;
   text-align: center;
-  padding: 24px 16px 30px;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      #fff0f5 0px,
-      #fff0f5 18px,
-      #ffe4ee 18px,
-      #ffe4ee 36px
-    );
-  border-bottom: 3px solid var(--pink);
-  box-shadow: inset 0 -6px 10px -6px rgba(212, 61, 108, 0.25);
+  padding: 22px 16px 24px;
+  background: var(--white);
+  border-bottom: 2px solid var(--pink-light);
 }
 
 .shop-title {
@@ -155,21 +138,12 @@ body {
   font-family: 'Fredoka One', sans-serif;
   font-weight: 400;
   font-size: 2.1rem;
-  color: var(--white);
+  color: var(--pink-dark);
   letter-spacing: 1px;
-  padding: 10px 30px;
-  background: linear-gradient(180deg, var(--pink-mid) 0%, var(--pink-dark) 55%, var(--pink-darker) 100%);
-  border: 4px solid var(--white);
-  border-radius: 999px;
-  box-shadow:
-    inset 0 3px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -6px 10px rgba(154, 30, 68, 0.35),
-    0 8px 0 var(--pink-darker),
-    0 14px 20px rgba(212, 61, 108, 0.45);
-  -webkit-text-stroke: 2px var(--pink-darker);
-  text-shadow:
-    0 3px 0 rgba(154, 30, 68, 0.6),
-    0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 4px 10px;
+  -webkit-text-stroke: 2px var(--white);
+  paint-order: stroke fill;
+  text-shadow: 0 2px 4px rgba(212, 61, 108, 0.25);
 }
 
 .sparkle {
@@ -231,17 +205,19 @@ body {
 
 .content {
   flex: 1;
-  padding: 20px 14px 28px;
+  padding: 10px 8px 26px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 /* ---- Banners principales (2 columnas) ---- */
 
 .main-banners {
   display: flex;
-  gap: 14px;
+  gap: 6px;
+  padding-bottom: 18px;
+  border-bottom: 3px dashed var(--pink);
 }
 
 .banner-card {
@@ -327,40 +303,22 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border-radius: 20px;
-  border: 3px solid #ffb6c1;
+  border-radius: 10px;
+  border: 2px dashed var(--pink);
+  background: var(--white);
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   position: relative;
-  box-shadow:
-    inset 0 3px 0 rgba(255, 255, 255, 0.85),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.08),
-    0 6px 0 rgba(0, 0, 0, 0.12),
-    0 10px 16px rgba(212, 61, 108, 0.28);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.category-btn::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border: 2px dashed rgba(255, 255, 255, 0.8);
-  border-radius: 14px;
-  pointer-events: none;
+  transition: transform 0.1s ease, background 0.1s ease;
 }
 
 .category-btn:active {
-  transform: translateY(5px);
-  box-shadow:
-    inset 0 3px 0 rgba(255, 255, 255, 0.85),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.08),
-    0 1px 0 rgba(0, 0, 0, 0.12),
-    0 2px 6px rgba(212, 61, 108, 0.28);
+  transform: translateY(2px);
+  background: var(--pink-light);
 }
 
 .cat-icon {
   font-size: 1.7rem;
-  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
 }
 
 .cat-label {
@@ -370,12 +328,4 @@ body {
   text-align: center;
   line-height: 1.2;
   padding: 0 4px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-
-.cat-1 { background: linear-gradient(180deg, #ffd1dc, var(--pink)); }
-.cat-2 { background: linear-gradient(180deg, #d9f4fa, var(--blue)); }
-.cat-3 { background: linear-gradient(180deg, #ddf9ec, var(--mint)); }
-.cat-4 { background: linear-gradient(180deg, #ffedd9, var(--peach)); }
-.cat-5 { background: linear-gradient(180deg, #ffd0da, var(--rose-deep)); }
-.cat-6 { background: linear-gradient(180deg, #ede1fb, var(--lavender)); }
