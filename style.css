@@ -1,23 +1,32 @@
 /* ==========================================================================
-   Mi Tienda — estética "gacha" japonesa, pastel, mobile-first
+   Mi Tienda — estética "gacha" japonesa: texturas, volumen 3D y kawaii
    ========================================================================== */
 
 :root {
   --pink-light: #ffe1ec;
-  --pink: #ffb6c9;
-  --pink-deep: #ff8fab;
-  --pink-dark: #f76c96;
-  --blue-light: #dff3f7;
-  --blue: #bfe6ef;
-  --lavender: #e6d9f5;
-  --mint: #d3f2e6;
-  --peach: #ffe4cf;
-  --cream: #fffaf6;
+  --pink: #ffb6c1;
+  --pink-mid: #ff9fb8;
+  --pink-deep: #ff7aa2;
+  --pink-dark: #ee5586;
+  --pink-darker: #d43d6c;
+  --blue: #bfe9f2;
+  --blue-deep: #7fd4e6;
+  --lavender: #e3d3f7;
+  --lavender-deep: #c8a6ec;
+  --mint: #cdf3e3;
+  --mint-deep: #8fdcbb;
+  --peach: #ffe0c2;
+  --peach-deep: #ffbf8a;
+  --rose: #ffc4d1;
+  --rose-deep: #ff90a8;
+  --cream: #fff8f5;
   --white: #ffffff;
-  --text-dark: #7a5468;
-  --text-soft: #a3798c;
-  --red-tag: #ff5c72;
-  --shadow-soft: 0 6px 14px rgba(214, 138, 165, 0.25);
+  --text-dark: #8a4f68;
+  --text-soft: #b98aa0;
+  --red-tag: #ff4d6d;
+  --red-tag-deep: #c9203f;
+  --cyan-tag: #4fd1e6;
+  --cyan-tag-deep: #1fa8bf;
 }
 
 * {
@@ -27,17 +36,22 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: var(--text-dark);
-  background-color: var(--pink-light);
+  background-color: #ffeef4;
+  /* Textura combinada: lunares sutiles + rayas diagonales suaves */
   background-image:
+    radial-gradient(circle, rgba(255, 182, 193, 0.35) 2px, transparent 2.6px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 2px, transparent 2.6px),
     repeating-linear-gradient(
       135deg,
-      var(--pink-light) 0px,
-      var(--pink-light) 26px,
-      #fff0f5 26px,
-      #fff0f5 52px
+      #ffeef4 0px,
+      #ffeef4 24px,
+      #fff6f9 24px,
+      #fff6f9 48px
     );
+  background-position: 0 0, 20px 20px, 0 0;
+  background-size: 40px 40px, 40px 40px, 68px 68px;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -49,7 +63,7 @@ body {
   max-width: 430px;
   min-height: 100vh;
   background: var(--cream);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 10px 24px rgba(212, 61, 108, 0.28);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -58,13 +72,15 @@ body {
 
 @media (min-width: 431px) {
   body {
-    padding: 24px 12px;
+    padding: 28px 12px;
   }
   .phone-frame {
     min-height: 90vh;
-    border-radius: 28px;
-    box-shadow: 0 20px 45px rgba(214, 138, 165, 0.35);
-    border: 6px solid var(--white);
+    border-radius: 32px;
+    box-shadow: 0 24px 55px rgba(212, 61, 108, 0.38);
+    border: 7px solid var(--white);
+    outline: 3px dashed var(--pink);
+    outline-offset: -14px;
   }
 }
 
@@ -74,11 +90,21 @@ body {
 
 .ticker-bar {
   width: 100%;
-  background: linear-gradient(90deg, var(--pink-dark), var(--pink-deep));
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--pink-darker) 0px,
+      var(--pink-darker) 14px,
+      var(--pink-dark) 14px,
+      var(--pink-dark) 28px
+    );
   overflow: hidden;
   white-space: nowrap;
-  padding: 8px 0;
+  padding: 9px 0;
   border-bottom: 3px solid var(--white);
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 5;
 }
 
 .ticker-track {
@@ -91,10 +117,11 @@ body {
 
 .ticker-track span {
   color: var(--white);
-  font-weight: 700;
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 @keyframes scroll-ticker {
@@ -107,67 +134,100 @@ body {
 }
 
 /* ==========================================================================
-   Encabezado
+   Encabezado — cartel de tienda
    ========================================================================== */
 
 .header {
   position: relative;
   text-align: center;
-  padding: 22px 16px 26px;
-  background: linear-gradient(180deg, #fff5f8, var(--cream));
-  border-bottom: 2px dashed var(--pink);
+  padding: 24px 16px 30px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #fff0f5 0px,
+      #fff0f5 18px,
+      #ffe4ee 18px,
+      #ffe4ee 36px
+    );
+  border-bottom: 3px solid var(--pink);
+  box-shadow: inset 0 -6px 10px -6px rgba(212, 61, 108, 0.25);
 }
 
 .shop-title {
   margin: 0;
   display: inline-block;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 2.1rem;
   color: var(--white);
   letter-spacing: 1px;
-  padding: 8px 28px;
-  background: linear-gradient(180deg, var(--pink-deep), var(--pink-dark));
-  border: 3px solid var(--white);
+  padding: 10px 30px;
+  background: linear-gradient(180deg, var(--pink-mid) 0%, var(--pink-dark) 55%, var(--pink-darker) 100%);
+  border: 4px solid var(--white);
   border-radius: 999px;
-  box-shadow: var(--shadow-soft), inset 0 -3px 0 rgba(0, 0, 0, 0.08);
-  text-shadow: 0 2px 3px rgba(180, 60, 100, 0.4);
+  box-shadow:
+    inset 0 3px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -6px 10px rgba(154, 30, 68, 0.35),
+    0 8px 0 var(--pink-darker),
+    0 14px 20px rgba(212, 61, 108, 0.45);
+  -webkit-text-stroke: 2px var(--pink-darker);
+  text-shadow:
+    0 3px 0 rgba(154, 30, 68, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .sparkle {
-  color: #fff8c4;
-  font-size: 1.1rem;
+  color: #fff6b8;
+  font-size: 1.2rem;
+  -webkit-text-stroke: 1.4px var(--pink-darker);
+  text-shadow: 0 2px 0 rgba(154, 30, 68, 0.5);
 }
 
 .banner-flag {
   position: absolute;
-  top: 0;
-  width: 60px;
-  height: 34px;
-  opacity: 0.9;
+  top: 6px;
+  width: 76px;
+  height: 30px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
 }
 
 .banner-flag::before,
-.banner-flag::after {
+.banner-flag::after,
+.banner-flag {
   content: "";
-  position: absolute;
-  top: 0;
-  width: 16px;
-  height: 20px;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .banner-flag-left {
-  left: 12px;
+  left: 10px;
+  background-image:
+    linear-gradient(var(--pink) 0 0),
+    linear-gradient(var(--blue-deep) 0 0),
+    linear-gradient(var(--lavender-deep) 0 0);
+  background-repeat: no-repeat;
+  background-size: 18px 26px;
+  background-position: 0 0, 26px 0, 52px 0;
+  clip-path: polygon(
+    0 0, 9px 0, 4.5px 100%,
+    26px 0, 35px 0, 30.5px 100%,
+    52px 0, 61px 0, 56.5px 100%
+  );
 }
-.banner-flag-left::before { left: 4px; background: var(--pink); }
-.banner-flag-left::after { left: 24px; background: var(--blue); }
 
 .banner-flag-right {
-  right: 12px;
+  right: 10px;
+  background-image:
+    linear-gradient(var(--peach-deep) 0 0),
+    linear-gradient(var(--mint-deep) 0 0),
+    linear-gradient(var(--pink-deep) 0 0);
+  background-repeat: no-repeat;
+  background-size: 18px 26px;
+  background-position: 0 0, 26px 0, 52px 0;
+  clip-path: polygon(
+    0 0, 9px 0, 4.5px 100%,
+    26px 0, 35px 0, 30.5px 100%,
+    52px 0, 61px 0, 56.5px 100%
+  );
 }
-.banner-flag-right::before { right: 4px; background: var(--lavender); }
-.banner-flag-right::after { right: 24px; background: var(--peach); }
 
 /* ==========================================================================
    Contenido
@@ -175,28 +235,40 @@ body {
 
 .content {
   flex: 1;
-  padding: 18px 14px 26px;
+  padding: 20px 14px 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 /* ---- Banners principales (2 columnas) ---- */
 
 .main-banners {
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .banner-card {
   position: relative;
   flex: 1;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 22px;
   background: var(--white);
-  box-shadow: var(--shadow-soft);
-  border: 3px solid var(--white);
-  outline: 1px solid var(--pink);
+  border: 3px solid var(--pink);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.8),
+    0 6px 0 rgba(212, 61, 108, 0.25),
+    0 10px 18px rgba(212, 61, 108, 0.3);
+}
+
+.banner-card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 2px dashed rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .banner-card img {
@@ -208,35 +280,71 @@ body {
 
 .banner-caption {
   text-align: center;
-  padding: 6px 4px;
-  font-size: 0.78rem;
-  font-weight: 700;
+  padding: 8px 4px;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.82rem;
   color: var(--text-dark);
-  background: linear-gradient(180deg, #fff, #ffeef3);
+  background: linear-gradient(180deg, #fff, #ffe6ee);
+  border-top: 2px solid var(--pink-light);
 }
+
+/* ---- Cintas / etiquetas realistas ---- */
 
 .tag {
   position: absolute;
-  top: 14px;
-  left: -34px;
+  top: 16px;
+  left: -42px;
   transform: rotate(-45deg);
-  width: 130px;
+  width: 160px;
   text-align: center;
-  padding: 3px 0;
-  font-size: 0.7rem;
-  font-weight: 800;
+  padding: 6px 0;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.78rem;
   letter-spacing: 0.5px;
   color: var(--white);
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tag::before,
+.tag::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  border-style: solid;
+  border-width: 6px 7px 0 7px;
+}
+
+.tag::before {
+  left: 0;
+}
+
+.tag::after {
+  right: 0;
 }
 
 .tag-sale {
-  background: var(--red-tag);
+  background: linear-gradient(180deg, var(--red-tag), var(--red-tag-deep));
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+.tag-sale::before,
+.tag-sale::after {
+  border-color: var(--red-tag-deep) transparent transparent transparent;
+  filter: brightness(0.75);
 }
 
 .tag-new {
-  background: #6fc7d6;
+  background: linear-gradient(180deg, var(--cyan-tag), var(--cyan-tag-deep));
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.tag-new::before,
+.tag-new::after {
+  border-color: var(--cyan-tag-deep) transparent transparent transparent;
+  filter: brightness(0.75);
 }
 
 /* ---- Banner medio ---- */
@@ -247,20 +355,49 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
+  padding: 18px;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 1.2rem;
   color: var(--text-dark);
-  background: linear-gradient(90deg, var(--pink-light), var(--white), var(--pink-light));
-  border: 2px dashed var(--pink-deep);
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      #ffffff 0px,
+      #ffffff 12px,
+      var(--pink-light) 12px,
+      var(--pink-light) 24px
+    );
+  border: 3px solid var(--pink);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 0 3px var(--white),
+    0 5px 0 rgba(212, 61, 108, 0.25),
+    0 8px 14px rgba(212, 61, 108, 0.3);
+  position: relative;
   cursor: pointer;
+}
+
+.mid-banner::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 2px dashed var(--pink-deep);
+  border-radius: 14px;
+  pointer-events: none;
 }
 
 .mid-banner-icon {
   font-size: 1.3rem;
+}
+
+.mid-banner:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 0 3px var(--white),
+    0 2px 0 rgba(212, 61, 108, 0.25),
+    0 4px 8px rgba(212, 61, 108, 0.3);
 }
 
 /* ---- Grid de categorías ---- */
@@ -269,7 +406,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 .category-btn {
@@ -280,36 +417,54 @@ body {
   justify-content: center;
   gap: 6px;
   border-radius: 20px;
-  border: 3px solid var(--white);
+  border: 3px solid #ffb6c1;
   cursor: pointer;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
   box-shadow:
-    0 5px 0 rgba(0, 0, 0, 0.08),
-    var(--shadow-soft);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+    inset 0 3px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.08),
+    0 6px 0 rgba(0, 0, 0, 0.12),
+    0 10px 16px rgba(212, 61, 108, 0.28);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.category-btn::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 2px dashed rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  pointer-events: none;
 }
 
 .category-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  transform: translateY(5px);
+  box-shadow:
+    inset 0 3px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(212, 61, 108, 0.28);
 }
 
 .cat-icon {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
 }
 
 .cat-label {
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 0.72rem;
   color: var(--text-dark);
   text-align: center;
-  line-height: 1.15;
+  line-height: 1.2;
   padding: 0 4px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.cat-1 { background: var(--pink); }
-.cat-2 { background: var(--blue); }
-.cat-3 { background: var(--mint); }
-.cat-4 { background: var(--peach); }
-.cat-5 { background: #ffc2cf; }
-.cat-6 { background: var(--lavender); }
+.cat-1 { background: linear-gradient(180deg, #ffd1dc, var(--pink)); }
+.cat-2 { background: linear-gradient(180deg, #d9f4fa, var(--blue)); }
+.cat-3 { background: linear-gradient(180deg, #ddf9ec, var(--mint)); }
+.cat-4 { background: linear-gradient(180deg, #ffedd9, var(--peach)); }
+.cat-5 { background: linear-gradient(180deg, #ffd0da, var(--rose-deep)); }
+.cat-6 { background: linear-gradient(180deg, #ede1fb, var(--lavender)); }
