@@ -6,11 +6,6 @@
   --pink-light: #ffe1ec;
   --pink: #ffb6c1;
   --pink-deep: #ff7aa2;
-  --pink-darker: #d43d6c;
-  --blue-deep: #7fd4e6;
-  --lavender-deep: #c8a6ec;
-  --mint-deep: #8fdcbb;
-  --peach-deep: #ffbf8a;
   --white: #ffffff;
   --text-dark: #8a4f68;
 }
@@ -64,122 +59,133 @@ body {
 }
 
 /* ==========================================================================
-   Barra Superior: Ticker
+   Barra Superior: Navegación y Contadores
    ========================================================================== */
 
-.ticker-bar {
+.top-bar {
   width: 100%;
-  background-image: url('bg-stripes.jpg');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 9px 0;
-  border-bottom: 3px solid var(--white);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 5;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffeef4 0px,
+    #ffeef4 6px,
+    #fff9fb 6px,
+    #fff9fb 12px
+  );
+  padding: 10px 12px;
+  border-bottom: 2px dashed #ffb6c1;
 }
 
-.ticker-track {
-  display: inline-flex;
-  gap: 3rem;
-  animation: scroll-ticker 12s linear infinite;
-  width: max-content;
-  padding-left: 100%;
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.ticker-track span {
-  color: var(--pink-darker);
+.btn-back,
+.btn-gift {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back {
+  background: #000;
+  border: 2px solid #ddd;
+}
+
+.btn-back .arrow-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.btn-gift {
+  background: var(--pink-light);
+  border: 1px solid #000;
+  font-size: 1.1rem;
+}
+
+.counters {
+  display: flex;
+  gap: 10px;
+}
+
+.counter-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--white);
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 3px 6px 3px 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.counter-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.counter-icon.coin-icon {
+  background: radial-gradient(circle at 30% 30%, #fff6d0, #e8b923);
+}
+
+.counter-icon.gem-icon {
+  background: radial-gradient(circle at 30% 30%, #eafaff, #8fd8ea);
+}
+
+.counter-value {
   font-family: 'Fredoka One', sans-serif;
-  font-weight: 400;
   font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: var(--text-dark);
+  min-width: 14px;
+  text-align: center;
 }
 
-@keyframes scroll-ticker {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.counter-add {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 /* ==========================================================================
-   Encabezado — cartel de tienda
+   Encabezado — título "Mi Tienda"
    ========================================================================== */
 
 .header {
-  position: relative;
+  background: var(--white);
   text-align: center;
-  padding: 12px 16px 14px;
+  padding: 16px;
 }
 
 .shop-title {
   margin: 0;
-  display: inline-block;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: #c7a76b;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.sparkle {
-  color: #c7a76b;
-  font-size: 0.9rem;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-.banner-flag {
-  position: absolute;
-  top: 6px;
-  width: 76px;
-  height: 30px;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
-}
-
-.banner-flag::before,
-.banner-flag::after,
-.banner-flag {
-  content: "";
-}
-
-.banner-flag-left {
-  left: 10px;
-  background-image:
-    linear-gradient(var(--pink) 0 0),
-    linear-gradient(var(--blue-deep) 0 0),
-    linear-gradient(var(--lavender-deep) 0 0);
-  background-repeat: no-repeat;
-  background-size: 18px 26px;
-  background-position: 0 0, 26px 0, 52px 0;
-  clip-path: polygon(
-    0 0, 9px 0, 4.5px 100%,
-    26px 0, 35px 0, 30.5px 100%,
-    52px 0, 61px 0, 56.5px 100%
-  );
-}
-
-.banner-flag-right {
-  right: 10px;
-  background-image:
-    linear-gradient(var(--peach-deep) 0 0),
-    linear-gradient(var(--mint-deep) 0 0),
-    linear-gradient(var(--pink-deep) 0 0);
-  background-repeat: no-repeat;
-  background-size: 18px 26px;
-  background-position: 0 0, 26px 0, 52px 0;
-  clip-path: polygon(
-    0 0, 9px 0, 4.5px 100%,
-    26px 0, 35px 0, 30.5px 100%,
-    52px 0, 61px 0, 56.5px 100%
-  );
+  font-family: 'Fredoka One', sans-serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  color: var(--white);
+  -webkit-text-stroke: 1px grey;
+  paint-order: stroke fill;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================================================
