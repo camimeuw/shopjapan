@@ -285,7 +285,7 @@ body {
   position: relative;
   flex: 1;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 2px;
   background: var(--white);
   border: 1px solid #000;
   outline: 1px dashed #ffb6c1;
