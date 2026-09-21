@@ -390,6 +390,13 @@ body {
   background: var(--pink-light);
   border: 1px solid #000;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cat-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cat-label {
