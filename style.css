@@ -161,20 +161,7 @@ body {
     #fff9fb 6px,
     #fff9fb 12px
   );
-  padding: 10px 12px 40px;
-}
-
-/* Contenedor que se superpone a la barra rosa creando la curva profunda */
-.contenedor-titulo {
-  height: 60px;
-  background-color: transparent;
-  border-top: 2px dashed #b0b0b0; /* La costura */
-  border-top-left-radius: 50% 40px; /* 40px lo hace más profundo */
-  border-top-right-radius: 50% 40px;
-  margin-top: -40px; /* Igual a la profundidad de la curva para que calce exacto con el borde de la barra rosa */
-  padding-top: 20px; /* Para que el texto no quede pegado al borde */
-  position: relative;
-  z-index: 10;
+  padding: 10px 12px;
 }
 
 .top-nav {
@@ -277,7 +264,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 10px 4px 26px;
+  padding: 0 4px 26px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -288,8 +275,17 @@ body {
 .main-banners {
   display: flex;
   gap: 10px;
-  padding-bottom: 18px;
-  border-bottom: 3px dashed var(--pink);
+  padding: 40px 0 18px; /* padding-top: espacio para que las fotos no queden pegadas al borde curvo */
+  background-color: #fdeef3; /* color/fondo suave de la página */
+  background-image: url('bg-floral.jpg');
+  background-repeat: repeat;
+  background-size: 400px auto;
+  border: none;
+  border-top-left-radius: 50% 30px;
+  border-top-right-radius: 50% 30px;
+  margin-top: -30px; /* Sube el contenedor para que pise el fondo rosa y forme la curva hacia arriba */
+  position: relative;
+  z-index: 10;
 }
 
 .banner-card {
