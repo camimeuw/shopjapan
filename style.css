@@ -142,20 +142,25 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.menu-list li {
+  border-bottom: 1px solid rgba(138, 79, 104, 0.2);
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
 }
 
 .menu-list a {
   display: block;
-  padding: 10px 14px;
-  background: var(--white);
-  border: 1px solid #000;
-  border-radius: 10px;
+  width: 100%;
+  padding: 14px 6px;
+  background: #fff6f8;
   color: var(--text-dark);
   text-decoration: none;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-family: 'Antiquarian', serif;
+  font-size: 1.15rem;
 }
 
 /* ==========================================================================
