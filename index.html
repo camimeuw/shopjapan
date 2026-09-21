@@ -30,6 +30,27 @@
       </ul>
     </nav>
 
+    <!-- Carrito lateral -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <nav class="cart-drawer" id="cart-drawer">
+      <button class="menu-close" id="cart-close" aria-label="Cerrar carrito" type="button">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#8a4f68" stroke-width="2.2" stroke-linecap="round">
+          <line x1="5" y1="5" x2="19" y2="19"/>
+          <line x1="19" y1="5" x2="5" y2="19"/>
+        </svg>
+      </button>
+      <h2 class="cart-title">Mi Carrito</h2>
+      <div class="cart-empty">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#c98aa3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1.4" fill="#c98aa3" stroke="none"/>
+          <circle cx="19" cy="21" r="1.4" fill="#c98aa3" stroke="none"/>
+          <path d="M1 1h3.2l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </nav>
+
     <!-- Barra Superior: Navegación y Contadores -->
     <div class="top-bar">
       <nav class="top-nav">
@@ -54,7 +75,7 @@
           </div>
         </div>
 
-        <button class="btn-cart" aria-label="Carrito">
+        <button class="btn-cart" id="cart-open" aria-label="Carrito" type="button">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1.4" fill="#000" stroke="none"/>
             <circle cx="19" cy="21" r="1.4" fill="#000" stroke="none"/>
@@ -146,6 +167,27 @@
     document.querySelectorAll('.menu-list a').forEach(function (link) {
       link.addEventListener('click', closeMenu);
     });
+
+    const cartOpenBtn = document.getElementById('cart-open');
+    const cartAddBtn = document.getElementById('btn-carrito');
+    const cartCloseBtn = document.getElementById('cart-close');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const cartDrawer = document.getElementById('cart-drawer');
+
+    function openCart() {
+      cartDrawer.classList.add('open');
+      cartOverlay.classList.add('visible');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove('open');
+      cartOverlay.classList.remove('visible');
+    }
+
+    cartOpenBtn.addEventListener('click', openCart);
+    cartAddBtn.addEventListener('click', openCart);
+    cartCloseBtn.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
   </script>
 </body>
 </html>
