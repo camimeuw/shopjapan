@@ -127,15 +127,6 @@ body {
   cursor: pointer;
 }
 
-.menu-title {
-  margin: 0;
-  text-align: center;
-  font-family: 'Antiquarian Scribe', serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: var(--text-dark);
-}
-
 .menu-list {
   list-style: none;
   margin: 0;
@@ -160,7 +151,7 @@ body {
   color: var(--text-dark);
   text-decoration: none;
   font-family: 'Antiquarian', serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
 }
 
 /* ==========================================================================
