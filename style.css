@@ -275,7 +275,7 @@ body {
 .main-banners {
   display: flex;
   gap: 10px;
-  padding: 40px 0 18px; /* padding-top: espacio para que las fotos no queden pegadas al borde curvo */
+  padding: 40px 16px 18px; /* padding-top: espacio para que las fotos no queden pegadas al borde curvo; padding lateral las achica un poco */
   background-color: #fdeef3; /* color/fondo suave de la página */
   background-image: url('bg-floral.jpg');
   background-repeat: repeat;
@@ -310,8 +310,6 @@ body {
   border-radius: 2px;
   background: var(--white);
   border: 1px solid #000;
-  outline: 1px dashed #ffb6c1;
-  outline-offset: -6px;
 }
 
 .banner-card img {
