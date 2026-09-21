@@ -366,11 +366,13 @@ body {
   padding: 0 8px;
   border-radius: 10px;
   border: 1px solid #000;
-  background: var(--white);
+  background-color: #fce4ec;
+  background-image: url('bg-dots.jpg');
+  background-size: 70px auto;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   position: relative;
-  transition: transform 0.1s ease, background 0.1s ease;
+  transition: transform 0.1s ease;
 }
 
 .category-btn:active {
