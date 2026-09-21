@@ -2,6 +2,16 @@
    Mi Tienda — estética "gacha" japonesa: texturas, volumen 3D y kawaii
    ========================================================================== */
 
+@font-face {
+  font-family: 'Antiquarian';
+  src: url('Antiquarian.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Antiquarian Scribe';
+  src: url('Antiquarian-Scribe.otf') format('opentype');
+}
+
 :root {
   --pink-light: #ffe1ec;
   --pink: #ffb6c1;
@@ -386,11 +396,7 @@ body {
   justify-content: center;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  background: var(--pink-light);
-  border: 1px solid #000;
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .cat-icon img {
@@ -400,8 +406,8 @@ body {
 }
 
 .cat-label {
-  font-family: 'Fredoka One', sans-serif;
-  font-size: 0.68rem;
+  font-family: 'Antiquarian', serif;
+  font-size: 0.85rem;
   color: var(--text-dark);
   text-align: left;
   line-height: 1.2;
