@@ -161,17 +161,20 @@ body {
     #fff9fb 6px,
     #fff9fb 12px
   );
-  padding: 10px 12px;
+  padding: 10px 12px 40px;
 }
 
-/* Divisor curvo hacia arriba (forma de colina/arco) */
-.divisor-curvo-arriba {
-  width: 100%;
-  height: 20px;
-  border-top: 2px dashed #b0b0b0;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-  background-color: transparent;
+/* Contenedor blanco que se superpone a la barra rosa creando la curva profunda */
+.contenedor-titulo {
+  height: 60px;
+  background-color: #ffffff;
+  border-top: 2px dashed #b0b0b0; /* La costura */
+  border-top-left-radius: 50% 40px; /* 40px lo hace más profundo */
+  border-top-right-radius: 50% 40px;
+  margin-top: -30px; /* Margen negativo para subirlo y pisar el fondo rosa */
+  padding-top: 20px; /* Para que el texto no quede pegado al borde */
+  position: relative;
+  z-index: 10;
 }
 
 .top-nav {
