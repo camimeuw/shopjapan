@@ -403,7 +403,7 @@ body {
 
 .cat-label {
   font-family: 'Antiquarian', serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.05rem;
   color: var(--text-dark);
   text-align: left;
