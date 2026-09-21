@@ -205,15 +205,6 @@ body {
   align-self: flex-start;
 }
 
-.cart-title {
-  margin: 0;
-  text-align: center;
-  font-family: 'Antiquarian Scribe', serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: var(--text-dark);
-}
-
 .cart-empty {
   flex: 1;
   display: flex;
