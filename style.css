@@ -403,8 +403,9 @@ body {
 
 .cat-label {
   font-family: 'Antiquarian', serif;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   color: var(--text-dark);
   text-align: left;
-  line-height: 1.2;
+  line-height: 1.15;
 }
