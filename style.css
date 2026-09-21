@@ -130,9 +130,9 @@ body {
 .menu-title {
   margin: 0;
   text-align: center;
-  font-family: 'Fredoka One', sans-serif;
+  font-family: 'Antiquarian Scribe', serif;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--text-dark);
 }
 
