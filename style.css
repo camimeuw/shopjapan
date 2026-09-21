@@ -323,9 +323,8 @@ body {
 /* ---- Banner medio ---- */
 
 .mid-banner {
-  width: 65%;
-  margin: 0 auto;
-  height: 170px;
+  width: 100%;
+  height: 90px;
   display: block;
   padding: 0;
   overflow: hidden;
