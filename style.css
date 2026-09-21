@@ -171,7 +171,7 @@ body {
   border-top: 2px dashed #b0b0b0; /* La costura */
   border-top-left-radius: 50% 40px; /* 40px lo hace más profundo */
   border-top-right-radius: 50% 40px;
-  margin-top: -30px; /* Margen negativo para subirlo y pisar el fondo rosa */
+  margin-top: -40px; /* Igual a la profundidad de la curva para que calce exacto con el borde de la barra rosa */
   padding-top: 20px; /* Para que el texto no quede pegado al borde */
   position: relative;
   z-index: 10;
