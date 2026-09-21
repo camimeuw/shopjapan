@@ -396,7 +396,7 @@ body {
 
 .mid-banner {
   width: 96%;
-  margin: 0 auto;
+  margin: -10px auto 0;
   height: 105px;
   display: block;
   padding: 0;
