@@ -164,10 +164,10 @@ body {
   padding: 10px 12px 40px;
 }
 
-/* Contenedor blanco que se superpone a la barra rosa creando la curva profunda */
+/* Contenedor que se superpone a la barra rosa creando la curva profunda */
 .contenedor-titulo {
   height: 60px;
-  background-color: #ffffff;
+  background-color: transparent;
   border-top: 2px dashed #b0b0b0; /* La costura */
   border-top-left-radius: 50% 40px; /* 40px lo hace más profundo */
   border-top-right-radius: 50% 40px;
