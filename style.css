@@ -196,17 +196,21 @@ body {
 
 .counters {
   display: flex;
+  flex: 1;
   gap: 10px;
+  margin: 0 10px;
 }
 
 .counter-pill {
   display: flex;
+  flex: 1;
   align-items: center;
+  justify-content: space-between;
   gap: 6px;
   background: var(--white);
   border: 1px solid #000;
   border-radius: 20px;
-  padding: 3px 6px 3px 3px;
+  padding: 3px 8px 3px 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
